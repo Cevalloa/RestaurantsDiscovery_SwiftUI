@@ -13,7 +13,6 @@ struct RestaurantService {
 
         let data = try Data(contentsOf: url)
 
-        // TODO: Decode and return the restaurants.
-        fatalError("TODO: Decode restaurants.json")
+        return try JSONDecoder().decode([Restaurant].self, from: data)
     }
 }
