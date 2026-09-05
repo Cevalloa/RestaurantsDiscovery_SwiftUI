@@ -22,14 +22,15 @@ final class RestaurantListViewModel: ObservableObject {
         // 5. Handle failure
         do {
             // Question: Could I use await here or async? Would async be better here
+            isLoading = true
             restaurants = try await service.loadRestaurants().sorted(by: { restaurant1, restaurant2 in
                 restaurant1.rating > restaurant2.rating
             })
             
-            print("ViewModel restaurants:", restaurants.count)
-
+            isLoading = false
         } catch {
             errorMessage = error.localizedDescription
+            isLoading = false
         }
     }
 

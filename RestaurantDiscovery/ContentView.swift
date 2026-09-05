@@ -5,19 +5,29 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack {
-            List(viewModel.restaurants) { restaurant in
-                NavigationLink {
-                    RestaurantDetailView(restaurant: restaurant)
-                } label: {
-                    Text(restaurant.name)
-                }
-                                
-                Button {
-                    viewModel.toggleFavorite(for: restaurant)
-                } label: {
-                    Image(systemName: viewModel.isFavorite(restaurant)
-                          ? "checkmark"
-                          : "xmark")
+            Group {
+                if viewModel.isLoading == true {
+                    ProgressView("Loading Restaurants")
+                } else if let errorMessage = viewModel.errorMessage {
+                    ContentUnavailableView(errorMessage, systemImage: "xmark")
+                } else if !viewModel.restaurants.isEmpty {
+                    List(viewModel.restaurants) { restaurant in
+                        NavigationLink {
+                            RestaurantDetailView(restaurant: restaurant)
+                        } label: {
+                            Text(restaurant.name)
+                        }
+                        
+                        Button {
+                            viewModel.toggleFavorite(for: restaurant)
+                        } label: {
+                            Image(systemName: viewModel.isFavorite(restaurant)
+                                  ? "checkmark"
+                                  : "xmark")
+                        }
+                    }
+                } else {
+                    ContentUnavailableView("Restaurants unavailable", systemImage: "xmark")
                 }
             }
             .padding()
