@@ -5,11 +5,10 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
-                Text("Restaurant Discovery")
-                    .font(.headline)
-                
-                List(viewModel.restaurants) { restaurant in
+            List(viewModel.restaurants) { restaurant in
+                NavigationLink {
+                    RestaurantDetailView(restaurant: restaurant)
+                } label: {
                     Text(restaurant.name)
                 }
             }
