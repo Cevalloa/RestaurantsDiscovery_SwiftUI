@@ -1,0 +1,56 @@
+[
+  {
+    "id": 101,
+    "name": "Mission Tacos",
+    "cuisine": "Mexican",
+    "rating": 4.8,
+    "deliveryTimeMinutes": 24,
+    "deliveryFee": 1.99,
+    "description": "Street-style tacos, burritos, and fresh salsas made to order."
+  },
+  {
+    "id": 102,
+    "name": "Golden Wok",
+    "cuisine": "Chinese",
+    "rating": 4.6,
+    "deliveryTimeMinutes": 31,
+    "deliveryFee": 0.0,
+    "description": "Classic stir-fries, dumplings, noodles, and rice dishes."
+  },
+  {
+    "id": 103,
+    "name": "Nonna's Kitchen",
+    "cuisine": "Italian",
+    "rating": 4.9,
+    "deliveryTimeMinutes": 38,
+    "deliveryFee": 2.49,
+    "description": "Fresh pasta, wood-fired favorites, and traditional Italian comfort food."
+  },
+  {
+    "id": 104,
+    "name": "Seoul Bowl",
+    "cuisine": "Korean",
+    "rating": 4.7,
+    "deliveryTimeMinutes": 27,
+    "deliveryFee": 1.49,
+    "description": "Korean rice bowls, bulgogi, spicy chicken, and house-made kimchi."
+  },
+  {
+    "id": 105,
+    "name": "Green Fork",
+    "cuisine": "Healthy",
+    "rating": 4.4,
+    "deliveryTimeMinutes": 19,
+    "deliveryFee": 0.99,
+    "description": "Salads, grain bowls, wraps, and protein-focused meals."
+  },
+  {
+    "id": 106,
+    "name": "Bombay Street",
+    "cuisine": "Indian",
+    "rating": 4.5,
+    "deliveryTimeMinutes": 33,
+    "deliveryFee": 1.99,
+    "description": "Curries, biryani, tandoori dishes, and Indian street-food favorites."
+  }
+]
