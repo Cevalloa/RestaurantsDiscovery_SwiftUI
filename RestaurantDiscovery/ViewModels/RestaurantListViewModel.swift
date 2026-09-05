@@ -35,10 +35,16 @@ final class RestaurantListViewModel: ObservableObject {
 
     func toggleFavorite(for restaurant: Restaurant) {
         // TODO: Toggle the restaurant id in favoriteRestaurantIDs.
+        // Question, should we add a new property for favorites on Restaurant ?
+        if favoriteRestaurantIDs.contains(restaurant.id) {
+            favoriteRestaurantIDs.remove(restaurant.id)
+        } else {
+            favoriteRestaurantIDs.insert(restaurant.id)
+        }
     }
 
     func isFavorite(_ restaurant: Restaurant) -> Bool {
         // TODO: Return whether this restaurant is a favorite.
-        false
+        return favoriteRestaurantIDs.contains(restaurant.id)
     }
 }

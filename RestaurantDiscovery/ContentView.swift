@@ -11,6 +11,14 @@ struct ContentView: View {
                 } label: {
                     Text(restaurant.name)
                 }
+                                
+                Button {
+                    viewModel.toggleFavorite(for: restaurant)
+                } label: {
+                    Image(systemName: viewModel.isFavorite(restaurant)
+                          ? "checkmark"
+                          : "xmark")
+                }
             }
             .padding()
             .navigationTitle("Restaurants")
