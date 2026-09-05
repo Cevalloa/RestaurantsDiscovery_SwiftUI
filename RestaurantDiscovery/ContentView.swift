@@ -8,10 +8,10 @@ struct ContentView: View {
             VStack {
                 Text("Restaurant Discovery")
                     .font(.headline)
-
-                Text("Browse restaurants from local sample data.")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                
+                List(viewModel.restaurants) { restaurant in
+                    Text(restaurant.name)
+                }
             }
             .padding()
             .navigationTitle("Restaurants")

@@ -20,6 +20,17 @@ final class RestaurantListViewModel: ObservableObject {
         // 3. Load restaurants from the service
         // 4. Sort highest rating first
         // 5. Handle failure
+        do {
+            // Question: Could I use await here or async? Would async be better here
+            restaurants = try await service.loadRestaurants().sorted(by: { restaurant1, restaurant2 in
+                restaurant1.rating > restaurant2.rating
+            })
+            
+            print("ViewModel restaurants:", restaurants.count)
+
+        } catch {
+            errorMessage = error.localizedDescription
+        }
     }
 
     func toggleFavorite(for restaurant: Restaurant) {
