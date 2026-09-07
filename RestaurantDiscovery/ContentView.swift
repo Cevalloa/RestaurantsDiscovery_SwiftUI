@@ -11,7 +11,7 @@ struct ContentView: View {
                 } else if let errorMessage = viewModel.errorMessage {
                     ContentUnavailableView(errorMessage, systemImage: "xmark")
                 } else if !viewModel.restaurants.isEmpty {
-                    List(viewModel.restaurants) { restaurant in
+                    List(viewModel.searchableRestaurants) { restaurant in
                         NavigationLink {
                             RestaurantDetailView(restaurant: restaurant)
                         } label: {

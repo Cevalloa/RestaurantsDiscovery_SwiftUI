@@ -49,4 +49,14 @@ final class RestaurantListViewModel: ObservableObject {
         // TODO: Return whether this restaurant is a favorite.
         return favoriteRestaurantIDs.contains(restaurant.id)
     }
+    
+    var searchableRestaurants: [Restaurant] {
+        guard !searchableText.isEmpty else {
+            return restaurants
+        }
+        
+        return restaurants.filter { restaurant in
+            restaurant.name.localizedStandardContains(searchableText)
+        }
+    }
 }
