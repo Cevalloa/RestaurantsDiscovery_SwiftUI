@@ -25,7 +25,9 @@ struct ContentView: View {
                                   ? "checkmark"
                                   : "xmark")
                         }
-                    }
+                    }.searchable(
+                        text:$viewModel.searchableText,
+                        prompt: "What do you want to search?")
                 } else {
                     ContentUnavailableView("Restaurants unavailable", systemImage: "xmark")
                 }

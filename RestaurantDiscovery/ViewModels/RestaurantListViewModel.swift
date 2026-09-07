@@ -6,6 +6,7 @@ final class RestaurantListViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
     @Published var favoriteRestaurantIDs: Set<Int> = []
+    @Published var searchableText = ""
 
     private let service: RestaurantService
 
